@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -542,7 +542,8 @@
 <!-- ── CATEGORY TABS ── -->
 <nav class="tab-bar">
   <div class="tab-bar-inner">
-    <button class="tab-btn active" onclick="scrollToSection(this,'before-arrival')">Before You Arrive</button>
+    <button class="tab-btn active" onclick="scrollToSection(this,'campuses')">Our Campuses</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'before-arrival')">Before You Arrive</button>
     <button class="tab-btn" onclick="scrollToSection(this,'first-day')">First Day</button>
     <button class="tab-btn" onclick="scrollToSection(this,'academic')">Academic</button>
     <button class="tab-btn" onclick="scrollToSection(this,'accommodation')">Accommodation</button>
@@ -550,7 +551,6 @@
     <button class="tab-btn" onclick="scrollToSection(this,'money')">Money</button>
     <button class="tab-btn" onclick="scrollToSection(this,'health')">Health &amp; Safety</button>
     <button class="tab-btn" onclick="scrollToSection(this,'visa')">Visa &amp; Legal</button>
-    <button class="tab-btn" onclick="scrollToSection(this,'campuses')">Our Campuses</button>
     <button class="tab-btn" onclick="scrollToSection(this,'emergencies')">Emergencies</button>
   </div>
 </nav>
@@ -563,7 +563,307 @@
     <p>Try different keywords or browse the categories below.</p>
   </div>
 
-  <!-- ══ BEFORE YOU ARRIVE ══ -->
+  <!-- ══ OUR CAMPUSES ══ -->
+  <section class="faq-section" id="campuses">
+    <div class="section-header">
+      <div class="section-icon">📍</div>
+      <h2>Our Campuses</h2>
+      <span class="section-count">2 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="campus locations address phone contact all schools">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Where are the Lexis English campuses located?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <table class="campus-table">
+            <tr><th>Campus</th><th>Address</th><th>Phone</th></tr>
+            <tr><td><strong>Noosa</strong></td><td>6 Lanyana Way, Noosa Heads QLD 4567</td><td>+61 7 5474 3000</td></tr>
+            <tr><td><strong>Sunshine Coast</strong></td><td>Level 6, 26 Duporth Ave, Maroochydore QLD 4558</td><td>+61 7 5479 2272</td></tr>
+            <tr><td><strong>Brisbane</strong></td><td>Level 11/12, 288 Edward Street, Brisbane City QLD 4000</td><td>+61 7 3002 8588</td></tr>
+            <tr><td><strong>Byron Bay</strong></td><td>16-20 Ruskin Street, Byron Bay NSW 2481</td><td>+61 2 6680 9903</td></tr>
+            <tr><td><strong>Sydney (Manly)</strong></td><td>30-32 South Steyne, Manly NSW 2095</td><td>+61 2 9976 2422</td></tr>
+            <tr><td><strong>Perth City</strong></td><td>Ground Level, 197 St Georges Tce, Perth WA 6000</td><td>—</td></tr>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="cricos registration number code registered australia government">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What are the Lexis English CRICOS registration codes?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>All Lexis English campuses are registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS):</p>
+          <ul>
+            <li><strong>Noosa &amp; Sunshine Coast:</strong> CRICOS Provider Code 01632D</li>
+            <li><strong>Brisbane:</strong> CRICOS Provider Code 02499G</li>
+            <li><strong>Byron Bay:</strong> CRICOS Provider Code 030109J</li>
+            <li><strong>Sydney (Manly):</strong> CRICOS Provider Code 02362B</li>
+            <li><strong>Perth City:</strong> CRICOS Provider Code 03972F</li>
+          </ul>
+          <p>You can verify registration at <a href="https://www.cricos.education.gov.au" target="_blank">cricos.education.gov.au</a></p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ══ CAMPUS SPOTLIGHT ══ -->
+  <section class="faq-section" id="campus-spotlight" style="display:none">
+    <div class="section-header">
+      <div class="section-icon">⭐</div>
+      <h2 id="spotlight-heading">Campus Guide</h2>
+    </div>
+    <div class="accordion">
+
+      <!-- NOOSA -->
+      <div class="faq-item" data-campus="noosa" data-keywords="noosa campus location beach hastings street">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Noosa campus like?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Noosa is a premium beachside destination on Queensland's Sunshine Coast. The campus is at <strong>6 Lanyana Way, Noosa Heads QLD 4567</strong> — a short walk from Noosa Main Beach and Hastings Street, one of Australia's most loved shopping and dining precincts. It has a relaxed atmosphere with small class sizes and a very close-knit student community.</p>
+          <div class="info-box">Campus phone: +61 7 5474 3000 &nbsp;|&nbsp; 24hr emergency: 0437 637 631</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="noosa" data-keywords="noosa student houses accommodation gala nina">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What student accommodation does Lexis Noosa offer?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Lexis Noosa operates <strong>4 dedicated student houses</strong> where you live alongside other international students. All houses are fully furnished with kitchen, living areas, laundry, and Wi-Fi included.</p>
+          <p>Contact the Noosa accommodation team: <strong>Gala Evans</strong> or <strong>Nina Irmak</strong> at noosaaccom@lexisenglish.com.</p>
+          <div class="info-box">Weekly rent: approximately $280–$360/week depending on room type.</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="noosa" data-keywords="noosa first day schedule orientation placement test time">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the first day schedule at Noosa?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>9:00am</strong> — Placement test</li>
+            <li><strong>10:30am</strong> — Campus orientation</li>
+            <li><strong>11:00am</strong> — Individual speaking interviews</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="noosa" data-keywords="noosa staff contacts academic manager student services">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Noosa campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>General Manager:</strong> Lindsay Planck</li>
+            <li><strong>Academic Manager:</strong> Robert Dillewaard</li>
+            <li><strong>Senior Teacher:</strong> Jessie-Zoe Robertson</li>
+            <li><strong>Accommodation:</strong> Gala Evans &amp; Nina Irmak</li>
+            <li><strong>Student Services:</strong> Will Pallett</li>
+            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: EnglishOnly</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <!-- SUNSHINE COAST -->
+      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast campus maroochydore location level 6 duporth">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Sunshine Coast campus like?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>The Sunshine Coast campus is on <strong>Level 6, 26 Duporth Avenue, Maroochydore QLD 4558</strong>, offering views over the Maroochy River. The campus is modern and central — walking distance to Cotton Tree Beach and the Maroochydore CBD.</p>
+          <div class="info-box">Campus phone: +61 7 5479 2272 &nbsp;|&nbsp; 24hr emergency: 0437 637 631</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast first day schedule placement test">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the first day schedule at Sunshine Coast?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>9:00am</strong> — Placement test</li>
+            <li><strong>10:00am</strong> — Registration</li>
+            <li><strong>10:30–10:50am</strong> — Break</li>
+            <li><strong>10:50am</strong> — Individual speaking interviews</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast staff contacts mark townsend lucinda kristan">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Sunshine Coast campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>General Manager:</strong> Lindsay Planck</li>
+            <li><strong>Academic Manager:</strong> Mark Townsend</li>
+            <li><strong>Accommodation:</strong> Lucinda Seefeld</li>
+            <li><strong>Student Services:</strong> Kristan Brock</li>
+            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Guestnetwork2017</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast medical centre doctor clinic maroochydore health gp">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Where can I see a doctor near Sunshine Coast campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>There are several medical clinics within easy reach of the Maroochydore campus:</p>
+          <table class="info-table">
+            <tr><th>Clinic</th><th>Address</th><th>Phone</th></tr>
+            <tr><td><strong>Medicine on Second</strong></td><td>50 Second Avenue, Maroochydore</td><td>(07) 5443 9455</td></tr>
+            <tr><td><strong>Plaza Central Medical</strong></td><td>33 Plaza Parade, Maroochydore</td><td>(07) 5479 0133</td></tr>
+            <tr><td><strong>Maroochy Waters Doctor</strong></td><td>2/24 Denna Street, Maroochydore</td><td>(07) 5479 1177</td></tr>
+          </table>
+          <p>Bring your OSHC (Allianz) card to all medical appointments. If you need a referral or have an urgent health concern, speak to Student Services first.</p>
+          <div class="info-box orange">For emergencies call <strong>000</strong>. OSHC 24hr assistance: <strong>1800 814 781</strong></div>
+        </div></div>
+      </div>
+
+      <!-- BRISBANE -->
+      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane campus cbd edward street level 11 12">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Brisbane campus like?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Located on <strong>Levels 11 &amp; 12, 288 Edward Street, Brisbane City QLD 4000</strong> with panoramic city views. Walking distance from Central and Roma Street train stations, Queen Street Mall, and South Bank. Brisbane is Australia's fastest growing city with a subtropical climate year-round.</p>
+          <div class="info-box">Campus phone: +61 7 3002 8588 &nbsp;|&nbsp; 24hr emergency: 0423 047 170</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane student one elizabeth street accommodation residence">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What student accommodation is available near Brisbane campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>Student One Elizabeth Street</strong> is a modern purpose-built student residence close to the Brisbane campus. It offers private and shared rooms, communal kitchens, study spaces, a rooftop terrace, and a social environment.</p>
+          <p>For accommodation enquiries contact <strong>Maria Edwards</strong> at brisbaneaccom@lexisenglish.com.</p>
+          <div class="info-box">Weekly rent: approximately $270–$340/week for share room options.</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane first day schedule 8:30 registration placement power up walk talk">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the first day schedule at Brisbane?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>8:30am</strong> — Registration</li>
+            <li><strong>9:00am</strong> — Placement test</li>
+            <li><strong>10:30am</strong> — Break</li>
+            <li><strong>10:45am</strong> — Orientation presentation</li>
+            <li><strong>11:00am</strong> — Speaking interviews</li>
+            <li><strong>12:30pm</strong> — Power Up session</li>
+            <li><strong>1:30pm</strong> — Walk &amp; Talk (neighbourhood tour)</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane staff contacts brad perks maria nancy">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Brisbane campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>General Manager:</strong> Lindsay Planck</li>
+            <li><strong>Academic Manager:</strong> Brad Perks</li>
+            <li><strong>Accommodation:</strong> Maria Edwards (brisbaneaccom@lexisenglish.com)</li>
+            <li><strong>Student Services:</strong> Nancy Fajardo</li>
+            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Str1v3@manly</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <!-- BYRON BAY -->
+      <div class="faq-item" data-campus="byron-bay" data-keywords="byron bay campus ruskin street location surf culture">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Byron Bay campus like?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Located at <strong>16-20 Ruskin Street, Byron Bay NSW 2481</strong>, Byron Bay is one of Australia's most iconic coastal towns — famous for its surf culture, arts and music scene, and relaxed lifestyle. The campus has a vibrant social community with a <strong>special Workshop session every Wednesday</strong> for all students.</p>
+          <div class="info-box">Campus phone: +61 2 6680 9903 &nbsp;|&nbsp; 24hr emergency: 0447 125 354</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="byron-bay" data-keywords="byron bay beginner level elementary no beginners a1 minimum">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Does Byron Bay offer all English levels?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Byron Bay does <strong>not offer Beginner (A1)</strong> level. The minimum entry level is <strong>Elementary (A2)</strong>. Students must also maintain <strong>80% attendance</strong> specifically to advance to the next level.</p>
+          <div class="info-box orange">If you are a complete beginner, please contact us — we will recommend a suitable campus (Noosa, Sunshine Coast, Brisbane, Sydney, or Perth).</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="byron-bay" data-keywords="byron bay staff contacts dan griffin nicole jacobi rita craig">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Byron Bay campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>General Manager:</strong> Lindsay Planck</li>
+            <li><strong>Academic Manager:</strong> Dan Griffin</li>
+            <li><strong>Accommodation:</strong> Nicole Jacobi</li>
+            <li><strong>Student Services:</strong> Rita Craig</li>
+            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Str1v3@manly</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <!-- SYDNEY -->
+      <div class="faq-item" data-campus="sydney" data-keywords="sydney manly campus south steyne beach location">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Sydney (Manly) campus like?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Located at <strong>30-32 South Steyne, Manly NSW 2095</strong> — right on Manly beachfront. Manly is one of Sydney's most beautiful suburbs, with the famous Manly Beach at your doorstep and The Corso (shopping and dining strip) steps away.</p>
+          <div class="info-box">Campus phone: +61 2 9976 2422 &nbsp;|&nbsp; 24hr emergency: 0408 062 804 / 0424 732 271</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="sydney" data-keywords="sydney ferry manly circular quay how get transport">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">How do I get to Manly campus from Sydney CBD?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>The best way is the <strong>Manly Ferry from Circular Quay</strong> — a 30-minute scenic harbour crossing costing approximately $10 each way with an Opal card. It's a Sydney experience in itself!</p>
+          <p>Alternatively, take a Northern Beaches bus (routes 169/199) from the city centre. Allow 45–60 minutes by bus.</p>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="sydney" data-keywords="sydney manly bunkhouse accommodation share $350 $450">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What accommodation is available near Sydney campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>The <strong>Manly Bunkhouse</strong> is a popular student hostel near campus, offering shared rooms from approximately <strong>$350–$450/week</strong> including Wi-Fi and shared kitchen facilities.</p>
+          <p>Contact Melina Treichel for accommodation arrangements: <a href="mailto:Sydneyhomestay@lexisenglish.com">Sydneyhomestay@lexisenglish.com</a></p>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="sydney" data-keywords="sydney staff contacts pricila van ahn valerie garcia isabelle daniels">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Sydney campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>General Manager:</strong> Lindsay Planck (0433 630 162)</li>
+            <li><strong>Academic Manager:</strong> Pricila Van Ahn</li>
+            <li><strong>Accommodation:</strong> Melina Treichel (Sydneyhomestay@lexisenglish.com)</li>
+            <li><strong>Student Services:</strong> Valerie Garcia &amp; Isabelle Daniels (sydneyadmin@lexisenglish.com)</li>
+            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Str1v3@manly</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="sydney" data-keywords="sydney manly doctor medical centre clinic health gp south steyne raglan">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Where can I see a doctor near Sydney (Manly) campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Two clinics are conveniently located near the Manly campus:</p>
+          <table class="info-table">
+            <tr><th>Clinic</th><th>Address</th><th>Phone</th></tr>
+            <tr><td><strong>South Steyne Medical Centre</strong></td><td>15 South Steyne, Manly (near school)</td><td>(02) 7209 2920</td></tr>
+            <tr><td><strong>Raglan Street Family Medical</strong></td><td>43 Belgrave Street, Manly</td><td>(02) 9977 8733</td></tr>
+          </table>
+          <p>Bring your OSHC (Allianz) card to your appointment. Manly Police Station is also nearby at (02) 9976 8099 for non-emergencies.</p>
+          <div class="info-box orange">For emergencies call <strong>000</strong>. Lexis Sydney 24hr: <strong>0424 732 271</strong> &nbsp;|&nbsp; OSHC 24hr: <strong>1800 814 781</strong></div>
+        </div></div>
+      </div>
+
+      <!-- PERTH -->
+      <div class="faq-item" data-campus="perth" data-keywords="perth city campus st georges terrace cbd location">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Perth City campus like?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Located at <strong>Ground Level, 197 St Georges Terrace, Perth WA 6000</strong> — the heart of Perth's CBD. Perth is Australia's sunniest capital city with stunning beaches (Cottesloe, Scarborough), Kings Park, and a thriving food and arts scene. The campus is accessible by train, bus, and the free CAT bus network.</p>
+          <div class="info-box">24hr emergency: contact campus &nbsp;|&nbsp; Perth Police: 08 9422 7111 &nbsp;|&nbsp; Royal Perth Hospital: 08 9224 2244</div>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="perth" data-keywords="perth accommodation share house $280 $380 cbd morena">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What accommodation is available near Perth campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Share houses in Perth CBD and inner suburbs typically cost <strong>$280–$380/week</strong>. Perth has a strong student housing market with options in suburbs like Northbridge, Subiaco, and Victoria Park.</p>
+          <p>Contact <strong>Morena Sacchetti</strong> for accommodation referrals.</p>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="perth" data-keywords="perth western australia time zone AWST different east coast">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Is Perth in a different time zone to eastern Australia?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes — Perth operates on <strong>Australian Western Standard Time (AWST, UTC+8)</strong>, which is <strong>2–3 hours behind</strong> eastern states (Sydney/Brisbane/Melbourne). There is no daylight saving in WA.</p>
+          <p>Keep this in mind when calling family and friends on the east coast, and when booking flights between Perth and eastern campuses.</p>
+        </div></div>
+      </div>
+      <div class="faq-item" data-campus="perth" data-keywords="perth staff contacts lindsey new kristy kate morena lydia maiko adriana">
+        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Perth City campus?</span><span class="faq-chevron">▼</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>General Manager:</strong> Lindsay Planck</li>
+            <li><strong>Operations Manager (WA):</strong> Lindsey New</li>
+            <li><strong>Senior Teachers:</strong> Kristy Schneideman &amp; Kate Rouse</li>
+            <li><strong>Accommodation:</strong> Morena Sacchetti</li>
+            <li><strong>Student Services:</strong> Lydia Liu, Maiko Livingstone &amp; Adriana Talero</li>
+            <li><strong>Wi-Fi:</strong> Network: Lexis Student &nbsp;|&nbsp; Password: SpeakEnglish!</li>
+          </ul>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ══ BEFORE YOU ARRIVE ══ -->
   <section class="faq-section" id="before-arrival">
     <div class="section-header">
       <div class="section-icon">✈️</div>
@@ -1341,54 +1641,6 @@
     </div>
   </section>
 
-  <!-- ══ OUR CAMPUSES ══ -->
-  <section class="faq-section" id="campuses">
-    <div class="section-header">
-      <div class="section-icon">📍</div>
-      <h2>Our Campuses</h2>
-      <span class="section-count">2 questions</span>
-    </div>
-    <div class="accordion">
-
-      <div class="faq-item" data-keywords="campus locations address phone contact all schools">
-        <div class="faq-question" onclick="toggle(this)">
-          <span class="faq-q-text">Where are the Lexis English campuses located?</span>
-          <span class="faq-chevron">▼</span>
-        </div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <table class="campus-table">
-            <tr><th>Campus</th><th>Address</th><th>Phone</th></tr>
-            <tr><td><strong>Noosa</strong></td><td>6 Lanyana Way, Noosa Heads QLD 4567</td><td>+61 7 5474 3000</td></tr>
-            <tr><td><strong>Sunshine Coast</strong></td><td>Level 6, 26 Duporth Ave, Maroochydore QLD 4558</td><td>+61 7 5479 2272</td></tr>
-            <tr><td><strong>Brisbane</strong></td><td>Level 11/12, 288 Edward Street, Brisbane City QLD 4000</td><td>+61 7 3002 8588</td></tr>
-            <tr><td><strong>Byron Bay</strong></td><td>16-20 Ruskin Street, Byron Bay NSW 2481</td><td>+61 2 6680 9903</td></tr>
-            <tr><td><strong>Sydney (Manly)</strong></td><td>30-32 South Steyne, Manly NSW 2095</td><td>+61 2 9976 2422</td></tr>
-            <tr><td><strong>Perth City</strong></td><td>Ground Level, 197 St Georges Tce, Perth WA 6000</td><td>—</td></tr>
-          </table>
-        </div></div>
-      </div>
-
-      <div class="faq-item" data-keywords="cricos registration number code registered australia government">
-        <div class="faq-question" onclick="toggle(this)">
-          <span class="faq-q-text">What are the Lexis English CRICOS registration codes?</span>
-          <span class="faq-chevron">▼</span>
-        </div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>All Lexis English campuses are registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS):</p>
-          <ul>
-            <li><strong>Noosa &amp; Sunshine Coast:</strong> CRICOS Provider Code 01632D</li>
-            <li><strong>Brisbane:</strong> CRICOS Provider Code 02499G</li>
-            <li><strong>Byron Bay:</strong> CRICOS Provider Code 030109J</li>
-            <li><strong>Sydney (Manly):</strong> CRICOS Provider Code 02362B</li>
-            <li><strong>Perth City:</strong> CRICOS Provider Code 03972F</li>
-          </ul>
-          <p>You can verify registration at <a href="https://www.cricos.education.gov.au" target="_blank">cricos.education.gov.au</a></p>
-        </div></div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- ══ EMERGENCIES ══ -->
   <section class="faq-section" id="emergencies">
     <div class="section-header">
@@ -1438,258 +1690,6 @@
             </div>
           </div>
           <p style="margin-top:14px;">Each Lexis English campus also has a <strong>24-hour student emergency number</strong>. This number is provided to you on enrolment and is listed in your Pre-Arrival Handbook.</p>
-        </div></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ CAMPUS SPOTLIGHT ══ -->
-  <section class="faq-section" id="campus-spotlight" style="display:none">
-    <div class="section-header">
-      <div class="section-icon">⭐</div>
-      <h2 id="spotlight-heading">Campus Guide</h2>
-    </div>
-    <div class="accordion">
-
-      <!-- NOOSA -->
-      <div class="faq-item" data-campus="noosa" data-keywords="noosa campus location beach hastings street">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Noosa campus like?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Noosa is a premium beachside destination on Queensland's Sunshine Coast. The campus is at <strong>6 Lanyana Way, Noosa Heads QLD 4567</strong> — a short walk from Noosa Main Beach and Hastings Street, one of Australia's most loved shopping and dining precincts. It has a relaxed atmosphere with small class sizes and a very close-knit student community.</p>
-          <div class="info-box">Campus phone: +61 7 5474 3000 &nbsp;|&nbsp; 24hr emergency: 0437 637 631</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="noosa" data-keywords="noosa student houses accommodation gala nina">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What student accommodation does Lexis Noosa offer?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Lexis Noosa operates <strong>4 dedicated student houses</strong> where you live alongside other international students. All houses are fully furnished with kitchen, living areas, laundry, and Wi-Fi included.</p>
-          <p>Contact the Noosa accommodation team: <strong>Gala Evans</strong> or <strong>Nina Irmak</strong> at noosaaccom@lexisenglish.com.</p>
-          <div class="info-box">Weekly rent: approximately $280–$360/week depending on room type.</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="noosa" data-keywords="noosa first day schedule orientation placement test time">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the first day schedule at Noosa?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>9:00am</strong> — Placement test</li>
-            <li><strong>10:30am</strong> — Campus orientation</li>
-            <li><strong>11:00am</strong> — Individual speaking interviews</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="noosa" data-keywords="noosa staff contacts academic manager student services">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Noosa campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>General Manager:</strong> Lindsay Planck</li>
-            <li><strong>Academic Manager:</strong> Robert Dillewaard</li>
-            <li><strong>Senior Teacher:</strong> Jessie-Zoe Robertson</li>
-            <li><strong>Accommodation:</strong> Gala Evans &amp; Nina Irmak</li>
-            <li><strong>Student Services:</strong> Will Pallett</li>
-            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: EnglishOnly</li>
-          </ul>
-        </div></div>
-      </div>
-
-      <!-- SUNSHINE COAST -->
-      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast campus maroochydore location level 6 duporth">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Sunshine Coast campus like?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>The Sunshine Coast campus is on <strong>Level 6, 26 Duporth Avenue, Maroochydore QLD 4558</strong>, offering views over the Maroochy River. The campus is modern and central — walking distance to Cotton Tree Beach and the Maroochydore CBD.</p>
-          <div class="info-box">Campus phone: +61 7 5479 2272 &nbsp;|&nbsp; 24hr emergency: 0437 637 631</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast first day schedule placement test">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the first day schedule at Sunshine Coast?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>9:00am</strong> — Placement test</li>
-            <li><strong>10:00am</strong> — Registration</li>
-            <li><strong>10:30–10:50am</strong> — Break</li>
-            <li><strong>10:50am</strong> — Individual speaking interviews</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast staff contacts mark townsend lucinda kristan">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Sunshine Coast campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>General Manager:</strong> Lindsay Planck</li>
-            <li><strong>Academic Manager:</strong> Mark Townsend</li>
-            <li><strong>Accommodation:</strong> Lucinda Seefeld</li>
-            <li><strong>Student Services:</strong> Kristan Brock</li>
-            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Guestnetwork2017</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="sunshine-coast" data-keywords="sunshine coast medical centre doctor clinic maroochydore health gp">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Where can I see a doctor near Sunshine Coast campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>There are several medical clinics within easy reach of the Maroochydore campus:</p>
-          <table class="info-table">
-            <tr><th>Clinic</th><th>Address</th><th>Phone</th></tr>
-            <tr><td><strong>Medicine on Second</strong></td><td>50 Second Avenue, Maroochydore</td><td>(07) 5443 9455</td></tr>
-            <tr><td><strong>Plaza Central Medical</strong></td><td>33 Plaza Parade, Maroochydore</td><td>(07) 5479 0133</td></tr>
-            <tr><td><strong>Maroochy Waters Doctor</strong></td><td>2/24 Denna Street, Maroochydore</td><td>(07) 5479 1177</td></tr>
-          </table>
-          <p>Bring your OSHC (Allianz) card to all medical appointments. If you need a referral or have an urgent health concern, speak to Student Services first.</p>
-          <div class="info-box orange">For emergencies call <strong>000</strong>. OSHC 24hr assistance: <strong>1800 814 781</strong></div>
-        </div></div>
-      </div>
-
-      <!-- BRISBANE -->
-      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane campus cbd edward street level 11 12">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Brisbane campus like?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Located on <strong>Levels 11 &amp; 12, 288 Edward Street, Brisbane City QLD 4000</strong> with panoramic city views. Walking distance from Central and Roma Street train stations, Queen Street Mall, and South Bank. Brisbane is Australia's fastest growing city with a subtropical climate year-round.</p>
-          <div class="info-box">Campus phone: +61 7 3002 8588 &nbsp;|&nbsp; 24hr emergency: 0423 047 170</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane student one elizabeth street accommodation residence">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What student accommodation is available near Brisbane campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p><strong>Student One Elizabeth Street</strong> is a modern purpose-built student residence close to the Brisbane campus. It offers private and shared rooms, communal kitchens, study spaces, a rooftop terrace, and a social environment.</p>
-          <p>For accommodation enquiries contact <strong>Maria Edwards</strong> at brisbaneaccom@lexisenglish.com.</p>
-          <div class="info-box">Weekly rent: approximately $270–$340/week for share room options.</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane first day schedule 8:30 registration placement power up walk talk">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the first day schedule at Brisbane?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>8:30am</strong> — Registration</li>
-            <li><strong>9:00am</strong> — Placement test</li>
-            <li><strong>10:30am</strong> — Break</li>
-            <li><strong>10:45am</strong> — Orientation presentation</li>
-            <li><strong>11:00am</strong> — Speaking interviews</li>
-            <li><strong>12:30pm</strong> — Power Up session</li>
-            <li><strong>1:30pm</strong> — Walk &amp; Talk (neighbourhood tour)</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="brisbane" data-keywords="brisbane staff contacts brad perks maria nancy">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Brisbane campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>General Manager:</strong> Lindsay Planck</li>
-            <li><strong>Academic Manager:</strong> Brad Perks</li>
-            <li><strong>Accommodation:</strong> Maria Edwards (brisbaneaccom@lexisenglish.com)</li>
-            <li><strong>Student Services:</strong> Nancy Fajardo</li>
-            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Str1v3@manly</li>
-          </ul>
-        </div></div>
-      </div>
-
-      <!-- BYRON BAY -->
-      <div class="faq-item" data-campus="byron-bay" data-keywords="byron bay campus ruskin street location surf culture">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Byron Bay campus like?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Located at <strong>16-20 Ruskin Street, Byron Bay NSW 2481</strong>, Byron Bay is one of Australia's most iconic coastal towns — famous for its surf culture, arts and music scene, and relaxed lifestyle. The campus has a vibrant social community with a <strong>special Workshop session every Wednesday</strong> for all students.</p>
-          <div class="info-box">Campus phone: +61 2 6680 9903 &nbsp;|&nbsp; 24hr emergency: 0447 125 354</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="byron-bay" data-keywords="byron bay beginner level elementary no beginners a1 minimum">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Does Byron Bay offer all English levels?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Byron Bay does <strong>not offer Beginner (A1)</strong> level. The minimum entry level is <strong>Elementary (A2)</strong>. Students must also maintain <strong>80% attendance</strong> specifically to advance to the next level.</p>
-          <div class="info-box orange">If you are a complete beginner, please contact us — we will recommend a suitable campus (Noosa, Sunshine Coast, Brisbane, Sydney, or Perth).</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="byron-bay" data-keywords="byron bay staff contacts dan griffin nicole jacobi rita craig">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Byron Bay campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>General Manager:</strong> Lindsay Planck</li>
-            <li><strong>Academic Manager:</strong> Dan Griffin</li>
-            <li><strong>Accommodation:</strong> Nicole Jacobi</li>
-            <li><strong>Student Services:</strong> Rita Craig</li>
-            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Str1v3@manly</li>
-          </ul>
-        </div></div>
-      </div>
-
-      <!-- SYDNEY -->
-      <div class="faq-item" data-campus="sydney" data-keywords="sydney manly campus south steyne beach location">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Sydney (Manly) campus like?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Located at <strong>30-32 South Steyne, Manly NSW 2095</strong> — right on Manly beachfront. Manly is one of Sydney's most beautiful suburbs, with the famous Manly Beach at your doorstep and The Corso (shopping and dining strip) steps away.</p>
-          <div class="info-box">Campus phone: +61 2 9976 2422 &nbsp;|&nbsp; 24hr emergency: 0408 062 804 / 0424 732 271</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="sydney" data-keywords="sydney ferry manly circular quay how get transport">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">How do I get to Manly campus from Sydney CBD?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>The best way is the <strong>Manly Ferry from Circular Quay</strong> — a 30-minute scenic harbour crossing costing approximately $10 each way with an Opal card. It's a Sydney experience in itself!</p>
-          <p>Alternatively, take a Northern Beaches bus (routes 169/199) from the city centre. Allow 45–60 minutes by bus.</p>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="sydney" data-keywords="sydney manly bunkhouse accommodation share $350 $450">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What accommodation is available near Sydney campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>The <strong>Manly Bunkhouse</strong> is a popular student hostel near campus, offering shared rooms from approximately <strong>$350–$450/week</strong> including Wi-Fi and shared kitchen facilities.</p>
-          <p>Contact Melina Treichel for accommodation arrangements: <a href="mailto:Sydneyhomestay@lexisenglish.com">Sydneyhomestay@lexisenglish.com</a></p>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="sydney" data-keywords="sydney staff contacts pricila van ahn valerie garcia isabelle daniels">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Sydney campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>General Manager:</strong> Lindsay Planck (0433 630 162)</li>
-            <li><strong>Academic Manager:</strong> Pricila Van Ahn</li>
-            <li><strong>Accommodation:</strong> Melina Treichel (Sydneyhomestay@lexisenglish.com)</li>
-            <li><strong>Student Services:</strong> Valerie Garcia &amp; Isabelle Daniels (sydneyadmin@lexisenglish.com)</li>
-            <li><strong>Wi-Fi:</strong> Network: LSE student &nbsp;|&nbsp; Password: Str1v3@manly</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="sydney" data-keywords="sydney manly doctor medical centre clinic health gp south steyne raglan">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Where can I see a doctor near Sydney (Manly) campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Two clinics are conveniently located near the Manly campus:</p>
-          <table class="info-table">
-            <tr><th>Clinic</th><th>Address</th><th>Phone</th></tr>
-            <tr><td><strong>South Steyne Medical Centre</strong></td><td>15 South Steyne, Manly (near school)</td><td>(02) 7209 2920</td></tr>
-            <tr><td><strong>Raglan Street Family Medical</strong></td><td>43 Belgrave Street, Manly</td><td>(02) 9977 8733</td></tr>
-          </table>
-          <p>Bring your OSHC (Allianz) card to your appointment. Manly Police Station is also nearby at (02) 9976 8099 for non-emergencies.</p>
-          <div class="info-box orange">For emergencies call <strong>000</strong>. Lexis Sydney 24hr: <strong>0424 732 271</strong> &nbsp;|&nbsp; OSHC 24hr: <strong>1800 814 781</strong></div>
-        </div></div>
-      </div>
-
-      <!-- PERTH -->
-      <div class="faq-item" data-campus="perth" data-keywords="perth city campus st georges terrace cbd location">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What is the Perth City campus like?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Located at <strong>Ground Level, 197 St Georges Terrace, Perth WA 6000</strong> — the heart of Perth's CBD. Perth is Australia's sunniest capital city with stunning beaches (Cottesloe, Scarborough), Kings Park, and a thriving food and arts scene. The campus is accessible by train, bus, and the free CAT bus network.</p>
-          <div class="info-box">24hr emergency: contact campus &nbsp;|&nbsp; Perth Police: 08 9422 7111 &nbsp;|&nbsp; Royal Perth Hospital: 08 9224 2244</div>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="perth" data-keywords="perth accommodation share house $280 $380 cbd morena">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">What accommodation is available near Perth campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Share houses in Perth CBD and inner suburbs typically cost <strong>$280–$380/week</strong>. Perth has a strong student housing market with options in suburbs like Northbridge, Subiaco, and Victoria Park.</p>
-          <p>Contact <strong>Morena Sacchetti</strong> for accommodation referrals.</p>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="perth" data-keywords="perth western australia time zone AWST different east coast">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Is Perth in a different time zone to eastern Australia?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <p>Yes — Perth operates on <strong>Australian Western Standard Time (AWST, UTC+8)</strong>, which is <strong>2–3 hours behind</strong> eastern states (Sydney/Brisbane/Melbourne). There is no daylight saving in WA.</p>
-          <p>Keep this in mind when calling family and friends on the east coast, and when booking flights between Perth and eastern campuses.</p>
-        </div></div>
-      </div>
-      <div class="faq-item" data-campus="perth" data-keywords="perth staff contacts lindsey new kristy kate morena lydia maiko adriana">
-        <div class="faq-question" onclick="toggle(this)"><span class="faq-q-text">Who are the key contacts at Perth City campus?</span><span class="faq-chevron">▼</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">
-          <ul>
-            <li><strong>General Manager:</strong> Lindsay Planck</li>
-            <li><strong>Operations Manager (WA):</strong> Lindsey New</li>
-            <li><strong>Senior Teachers:</strong> Kristy Schneideman &amp; Kate Rouse</li>
-            <li><strong>Accommodation:</strong> Morena Sacchetti</li>
-            <li><strong>Student Services:</strong> Lydia Liu, Maiko Livingstone &amp; Adriana Talero</li>
-            <li><strong>Wi-Fi:</strong> Network: Lexis Student &nbsp;|&nbsp; Password: SpeakEnglish!</li>
-          </ul>
         </div></div>
       </div>
 
@@ -1804,7 +1804,7 @@
   });
 
   // Scroll-spy for tab bar
-  const sectionIds = ['before-arrival','first-day','academic','accommodation','working','money','health','visa','campuses','emergencies'];
+  const sectionIds = ['campuses','before-arrival','first-day','academic','accommodation','working','money','health','visa','emergencies'];
   window.addEventListener('scroll', () => {
     let current = sectionIds[0];
     document.querySelectorAll('.faq-section').forEach(sec => {
