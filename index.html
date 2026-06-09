@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ – Lexis English</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #2b2b2b;
+      background: #f7f8fa;
+    }
+
+    /* ── Brand Tokens ── */
+    :root {
+      --orange:  #E97132;
+      --blue:    #156082;
+      --teal:    #0F9ED5;
+      --navy:    #0E2841;
+      --light:   #f7f8fa;
+      --white:   #ffffff;
+      --border:  #e0e4ea;
+      --text:    #2b2b2b;
+      --muted:   #6b7280;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--orange);
+      color: var(--white);
+      padding: 0;
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      gap: 16px;
+    }
+    .brand-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .brand-tagline {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.88);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .header-stripe-blue  { height: 7px; background: var(--blue); }
+    .header-stripe-teal  { height: 4px; background: var(--teal); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      padding: 56px 24px 48px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+    .hero-search {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .hero-search input {
+      flex: 1;
+      padding: 14px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      border: none;
+      outline: none;
+      color: var(--text);
+    }
+    .hero-search button {
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      padding: 14px 24px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .hero-search button:hover { background: #d4621f; }
+
+    /* ── Category Tabs ── */
+    .tab-bar {
+      background: var(--white);
+      border-bottom: 3px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .tab-bar-inner {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 24px;
+      scrollbar-width: none;
+    }
+    .tab-bar-inner::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex-shrink: 0;
+      padding: 14px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .tab-btn:hover { color: var(--orange); }
+    .tab-btn.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+    /* ── Main Layout ── */
+    .main {
+      max-width: 1060px;
+      margin: 40px auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── FAQ Section ── */
+    .faq-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 80px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--orange);
+    }
+    .section-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--orange);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .section-count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── Accordion ── */
+    .accordion { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .faq-item:hover { box-shadow: 0 2px 16px rgba(233,113,50,0.12); border-color: #f0c0a0; }
+    .faq-item.open { border-color: var(--orange); box-shadow: 0 2px 16px rgba(233,113,50,0.15); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-q-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      flex: 1;
+    }
+    .faq-item.open .faq-q-text { color: var(--orange); }
+    .faq-chevron {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.3s;
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .faq-item.open .faq-chevron {
+      background: var(--orange);
+      color: var(--white);
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+      padding: 0 20px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 800px;
+      padding: 0 20px 18px;
+    }
+    .faq-answer-inner {
+      font-size: 0.9rem;
+      color: #444;
+      font-weight: 400;
+      line-height: 1.75;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    .faq-answer-inner p { margin-bottom: 10px; }
+    .faq-answer-inner p:last-child { margin-bottom: 0; }
+    .faq-answer-inner ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+    .faq-answer-inner li { margin-bottom: 4px; }
+    .faq-answer-inner strong { color: var(--navy); }
+    .faq-answer-inner a { color: var(--blue); text-decoration: underline; }
+    .faq-answer-inner a:hover { color: var(--orange); }
+    .tag {
+      display: inline-block;
+      background: #fff4ec;
+      color: var(--orange);
+      border: 1px solid #f4c9a8;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      margin-bottom: 8px;
+    }
+    .info-box {
+      background: #f0f7fb;
+      border-left: 4px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: #1a3a50;
+    }
+    .info-box.orange {
+      background: #fff4ec;
+      border-left-color: var(--orange);
+      color: #4a2000;
+    }
+
+    /* ── Contact Banner ── */
+    .contact-banner {
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-banner h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .contact-banner p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .contact-btn {
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      padding: 13px 28px;
+      border-radius: 40px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .contact-btn:hover { background: #d4621f; transform: translateY(-1px); }
+
+    /* ── Emergency Numbers ── */
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .emergency-card {
+      background: #fff4ec;
+      border: 1px solid #f4c9a8;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .emergency-card .e-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+    .emergency-card .e-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .emergency-card .e-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── Campus Table ── */
+    .campus-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+    .campus-table th {
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .campus-table td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .campus-table tr:last-child td { border-bottom: none; }
+    .campus-table tr:nth-child(even) td { background: #f7f8fa; }
+
+    /* ── No Results ── */
+    .no-results {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--muted);
+      display: none;
+    }
+    .no-results h3 { font-size: 1.1rem; color: var(--blue); margin-bottom: 8px; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--orange); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer strong { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .header-top { padding: 14px 20px; }
+      .brand-name { font-size: 1.2rem; }
+      .hero h1 { font-size: 1.7rem; }
+      .main { padding: 0 14px 60px; }
+      .contact-banner { padding: 24px 20px; }
+      .tab-btn { padding: 12px 14px; font-size: 0.76rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-top">
+    <div>
+      <a href="https://www.lexisenglish.com" class="brand-name">LEXIS ENGLISH</a>
+      <div class="brand-tagline">Serious Study. Serious Fun.</div>
+    </div>
+    <div style="font-size:0.82rem;color:rgba(255,255,255,0.75);text-align:right;">
+      <div>📧 <a href="mailto:info@lexisenglish.com" style="color:rgba(255,255,255,0.9);text-decoration:none;">info@lexisenglish.com</a></div>
+      <div>🌐 <a href="https://www.lexisenglish.com" style="color:rgba(255,255,255,0.9);text-decoration:none;">www.lexisenglish.com</a></div>
+    </div>
+  </div>
+  <div class="header-stripe-blue"></div>
+  <div class="header-stripe-teal"></div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <h1>Frequently Asked <span>Questions</span></h1>
+  <p>Everything you need to know before, during, and after your study experience at Lexis English.</p>
+  <div class="hero-search">
+    <input type="text" id="searchInput" placeholder="Search questions e.g. visa, accommodation, work…" />
+    <button onclick="filterFAQs()">Search</button>
+  </div>
+</section>
+
+<!-- ── CATEGORY TABS ── -->
+<nav class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" onclick="scrollToSection(this,'before-arrival')">Before You Arrive</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'first-day')">First Day</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'academic')">Academic</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'accommodation')">Accommodation</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'working')">Working</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'money')">Money</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'health')">Health &amp; Safety</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'visa')">Visa &amp; Legal</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'campuses')">Our Campuses</button>
+    <button class="tab-btn" onclick="scrollToSection(this,'emergencies')">Emergencies</button>
+  </div>
+</nav>
+
+<!-- ── MAIN CONTENT ── -->
+<main class="main">
+
+  <div class="no-results" id="noResults">
+    <h3>No results found</h3>
+    <p>Try different keywords or browse the categories below.</p>
+  </div>
+
+  <!-- ══ BEFORE YOU ARRIVE ══ -->
+  <section class="faq-section" id="before-arrival">
+    <div class="section-header">
+      <div class="section-icon">✈️</div>
+      <h2>Before You Arrive</h2>
+      <span class="section-count">8 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="documents bring passport visa health insurance">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What documents do I need to bring to Australia?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Please bring the following documents with you:</p>
+          <ul>
+            <li><strong>Valid passport</strong> — ensure it is valid for the full duration of your stay</li>
+            <li><strong>Student visa grant letter</strong> — keep a printed and digital copy</li>
+            <li><strong>Confirmation of Enrolment (CoE)</strong> — provided by Lexis English</li>
+            <li><strong>Overseas Student Health Cover (OSHC) policy</strong> — required for all student visa holders</li>
+            <li><strong>Evidence of funds</strong> — bank statements or scholarship letters</li>
+            <li><strong>Emergency contact details</strong> — family member or trusted person back home</li>
+            <li><strong>Accommodation confirmation</strong> — letter or booking reference for your first night</li>
+          </ul>
+          <div class="info-box">Keep digital copies of all documents in your email or cloud storage in case originals are lost.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="oshc health insurance medicare cover allianz">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What is OSHC and do I need it?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>Overseas Student Health Cover (OSHC)</strong> is compulsory health insurance for all international students in Australia. It is a visa requirement — you cannot enter Australia on a student visa without it.</p>
+          <p>Lexis English arranges OSHC through <strong>Allianz Care Australia</strong> on your behalf. Your OSHC covers:</p>
+          <ul>
+            <li>Doctor visits (GP)</li>
+            <li>Hospital treatment</li>
+            <li>Some prescription medicines</li>
+            <li>Emergency ambulance</li>
+          </ul>
+          <p>For claims or queries, contact Allianz OSHC: <strong>1300 136 742</strong> or visit <a href="https://www.allianzcare.com.au" target="_blank">allianzcare.com.au</a></p>
+          <div class="info-box">OSHC does not cover dental, optical, or physiotherapy. Consider additional private insurance for these services.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="arrive arrival date when orientation first day course start">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">When should I arrive in Australia?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>We recommend arriving <strong>at least 2–3 days before your course start date</strong>. This gives you time to:</p>
+          <ul>
+            <li>Settle into your accommodation</li>
+            <li>Buy essential items (bedding, toiletries, groceries)</li>
+            <li>Get a local SIM card</li>
+            <li>Rest and recover from jet lag</li>
+            <li>Explore the local area</li>
+          </ul>
+          <p>Your <strong>First Day (Orientation)</strong> is the official start of your Lexis English program. Placement testing begins at approximately 8:30am–9:00am. Please arrive on time.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="sim card phone mobile australia">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How do I get a local SIM card?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>You can purchase a prepaid SIM card from convenience stores, supermarkets (Coles, Woolworths), or phone carrier stores. Popular providers for international students include:</p>
+          <ul>
+            <li><strong>Optus</strong> — good coverage nationwide</li>
+            <li><strong>Telstra</strong> — best regional coverage</li>
+            <li><strong>Vodafone</strong> — competitive international call rates</li>
+            <li><strong>Aldi Mobile / Boost</strong> — affordable prepaid plans</li>
+          </ul>
+          <p>You will need your <strong>passport</strong> to register a SIM card in Australia. Plans typically start from $10–$30/month.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="pack bring clothes weather seasons">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What should I pack?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Australia has a varied climate depending on location and season. General packing recommendations:</p>
+          <ul>
+            <li><strong>Noosa / Sunshine Coast / Brisbane / Byron Bay:</strong> Warm and subtropical — light clothing year-round, bring a light jacket for winter (June–August)</li>
+            <li><strong>Sydney (Manly):</strong> Mild — pack layers for cooler months, bring sun protection</li>
+            <li><strong>Perth City:</strong> Hot, dry summers; mild winters — sun protection is essential</li>
+          </ul>
+          <p>Always bring: <strong>sunscreen (SPF 50+), a hat, and sunglasses</strong> — Australian UV is intense all year.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="bank account open before arrive money transfer">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Can I open an Australian bank account before I arrive?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes — major Australian banks allow you to apply for an account online before arrival. The most popular banks for international students are:</p>
+          <ul>
+            <li><strong>Commonwealth Bank (CBA)</strong> — Westfield Smart Access account, popular with students</li>
+            <li><strong>ANZ</strong> — Access Advantage account</li>
+            <li><strong>Westpac</strong> — Choice account</li>
+            <li><strong>NAB</strong> — Classic Banking account</li>
+          </ul>
+          <p>You will need to visit a branch within 6 weeks of arrival to verify your identity with your passport. Bring your passport, CoE, and Australian address.</p>
+          <div class="info-box">Avoid carrying large amounts of cash. Set up your account early so your card is ready when you arrive.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="airport transfer pickup taxi bus train arrive">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How do I get from the airport to my campus?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Transport options vary by campus:</p>
+          <ul>
+            <li><strong>Noosa:</strong> Brisbane Airport approx. 75 min; Sunshine Coast (Maroochydore) Airport approx. 30 min</li>
+            <li><strong>Sunshine Coast:</strong> Maroochydore Airport approx. 15–20 min by taxi (~$25)</li>
+            <li><strong>Brisbane:</strong> Airtrain ~$22 | Taxi ~$50–60 | Bus ~$20</li>
+            <li><strong>Byron Bay:</strong> Gold Coast Airport ~45 min (~$35 taxi) | Brisbane Airport ~2 hrs (~$65)</li>
+            <li><strong>Sydney (Manly):</strong> Train + Ferry ~$25–35 | Taxi ~$90–120</li>
+            <li><strong>Perth City:</strong> Bus ~$5 | Taxi/Uber ~$45–60 | Airport Shuttle ~$25–35</li>
+          </ul>
+          <p>We recommend booking a taxi, rideshare (Uber/DiDi), or pre-arranged shuttle for your first arrival.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="medication prescription drugs bring medicine">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Can I bring my prescription medication to Australia?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes, but there are important rules:</p>
+          <ul>
+            <li>Bring a <strong>doctor's letter</strong> in English confirming your condition and medication</li>
+            <li>Keep medication in its <strong>original labelled packaging</strong></li>
+            <li>Bring enough supply for your stay, or check if it is available in Australia</li>
+            <li>Some medications are <strong>controlled substances</strong> in Australia — check with the Australian Border Force before travelling</li>
+          </ul>
+          <p>Visit <a href="https://www.tga.gov.au" target="_blank">www.tga.gov.au</a> for the Australian Therapeutic Goods Administration's traveller information.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ FIRST DAY ══ -->
+  <section class="faq-section" id="first-day">
+    <div class="section-header">
+      <div class="section-icon">🎓</div>
+      <h2>Your First Day</h2>
+      <span class="section-count">4 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="first day orientation schedule what happens placement test">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What happens on my first day at Lexis English?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Your first day is a structured orientation to help you settle in. The general schedule is:</p>
+          <ul>
+            <li><strong>8:30–9:00am</strong> — Registration and welcome</li>
+            <li><strong>9:00–10:30am</strong> — Written placement test</li>
+            <li><strong>10:30–10:45am</strong> — Morning break (tea/coffee)</li>
+            <li><strong>10:45–11:00am</strong> — Orientation presentation (campus rules, policies, timetables)</li>
+            <li><strong>11:00am–12:00pm</strong> — Individual speaking interviews with a teacher</li>
+            <li><strong>12:30pm</strong> — Power Up session (elective activities)</li>
+            <li><strong>1:30pm</strong> — Walk &amp; Talk (guided campus and neighbourhood tour)</li>
+          </ul>
+          <div class="info-box">Exact times may vary slightly by campus. Your campus will confirm the full schedule with you.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="placement test level class english ability">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What is the placement test and how does it work?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>The placement test assesses your current English level so we can place you in the right class. It consists of:</p>
+          <ul>
+            <li><strong>Written test</strong> — grammar and vocabulary (approximately 90 minutes)</li>
+            <li><strong>Speaking interview</strong> — one-on-one conversation with a teacher (approximately 10–15 minutes)</li>
+          </ul>
+          <p>Results are used to place you in one of six levels: <strong>Beginner (A1), Elementary (A2), Pre-Intermediate (B1), Intermediate (B1+), Upper Intermediate (B2), or Advanced (C1)</strong>.</p>
+          <div class="info-box orange">Do not study the night before — we need to accurately assess your current level, not what you can memorise.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="bring first day what need id money">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What should I bring on my first day?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <ul>
+            <li><strong>Passport</strong> (original)</li>
+            <li><strong>Confirmation of Enrolment (CoE)</strong></li>
+            <li><strong>OSHC card or policy documents</strong></li>
+            <li><strong>A pen</strong></li>
+            <li><strong>Notepad or exercise book</strong></li>
+            <li><strong>Australian phone number</strong> (if you have one)</li>
+            <li><strong>Local address</strong> where you are staying</li>
+          </ul>
+          <p>Bring a light lunch or some money — there are cafes and shops nearby most campuses.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="student card id lexis app my lexis">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Will I get a student card?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes! You will receive a <strong>Lexis English Student Card</strong> which provides discounts at local businesses, cafes, and tourist attractions.</p>
+          <p>You will also be introduced to the <strong>My Lexis App</strong> — your digital hub for timetables, learning resources, activity bookings, and campus news.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ ACADEMIC ══ -->
+  <section class="faq-section" id="academic">
+    <div class="section-header">
+      <div class="section-icon">📚</div>
+      <h2>Academic Program</h2>
+      <span class="section-count">6 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="lessons hours per day week timetable schedule class">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How many hours per week will I study?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>The <strong>General English (GE)</strong> program runs <strong>20 lessons per week</strong> (Monday–Friday). Each lesson is 45 minutes, giving approximately <strong>15 hours of classroom instruction per week</strong>.</p>
+          <p>Additional elective activities include:</p>
+          <ul>
+            <li><strong>Power Up sessions</strong> — skills workshops (pronunciation, exam preparation, conversation clubs)</li>
+            <li><strong>Homework Help</strong> — after-class support with teachers</li>
+            <li><strong>Social programme</strong> — excursions, sport, beach days, cultural events</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="levels beginners advanced elementary intermediate upper">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What English levels does Lexis offer?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>We offer <strong>six levels</strong> aligned to the Common European Framework (CEFR):</p>
+          <ul>
+            <li><strong>Beginner</strong> — A1</li>
+            <li><strong>Elementary</strong> — A2</li>
+            <li><strong>Pre-Intermediate</strong> — B1</li>
+            <li><strong>Intermediate</strong> — B1+</li>
+            <li><strong>Upper Intermediate</strong> — B2</li>
+            <li><strong>Advanced</strong> — C1</li>
+          </ul>
+          <div class="info-box orange">Byron Bay campus does not offer Beginner level. If you are a complete beginner, please contact us to discuss the right campus for you.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="attendance minimum miss class absence late 80%">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What is the attendance requirement?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>All students must maintain a minimum attendance of <strong>80%</strong> in each four-week study period. This is both a Lexis English requirement and a <strong>student visa condition</strong>.</p>
+          <p>If your attendance falls below 80%:</p>
+          <ul>
+            <li>You will receive a formal <strong>written warning</strong></li>
+            <li>Continued non-attendance may result in <strong>visa reporting to the Department of Home Affairs (DHA)</strong></li>
+            <li>In serious cases, your enrolment may be cancelled</li>
+          </ul>
+          <div class="info-box orange">If you are sick, contact your campus immediately. Medical absences may be considered separately if you provide a doctor's certificate.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="advance level up next move class progress test">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How do I move up to the next level?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Level advancement is assessed at the end of each study period. To advance to the next level you must:</p>
+          <ul>
+            <li>Complete a <strong>level progression test</strong></li>
+            <li>Achieve the <strong>required score</strong> for your current level</li>
+            <li>Maintain minimum <strong>80% attendance</strong></li>
+          </ul>
+          <p>Your teacher will advise you if you are ready to advance. If you do not pass, you will continue in the same level with new course content.</p>
+          <div class="info-box orange">Byron Bay campus requires 80% attendance specifically for level advancement.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="textbook course materials cambridge empower cost buy">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Do I need to buy textbooks?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Lexis English uses <strong>Cambridge Empower</strong> series textbooks. Your course materials are included in your tuition fee — you do not need to purchase textbooks separately.</p>
+          <p>You will be issued your textbook on or after your first day of classes. Please bring it to every lesson and take care of it.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="english only policy speaking language classroom">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Do I have to speak English at school?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes — Lexis English operates an <strong>English Only Policy</strong> on all campuses. This applies in classrooms, common areas, and during school activities.</p>
+          <p>Speaking English at all times — even with friends from your home country — is the fastest way to improve. Immersion works!</p>
+          <div class="info-box">This policy applies to students. Staff and teachers may use other languages when necessary to support student welfare.</div>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ ACCOMMODATION ══ -->
+  <section class="faq-section" id="accommodation">
+    <div class="section-header">
+      <div class="section-icon">🏠</div>
+      <h2>Accommodation</h2>
+      <span class="section-count">5 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="accommodation options homestay share house student apartment">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What accommodation options are available?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Lexis English can help arrange several types of accommodation:</p>
+          <ul>
+            <li><strong>Homestay</strong> — live with an Australian family; meals often included; great for immersion</li>
+            <li><strong>Student share houses</strong> — share a house with other international students; kitchen facilities; independent lifestyle</li>
+            <li><strong>Student residences</strong> — purpose-built student apartments; Brisbane campus has access to Student One Elizabeth Street</li>
+            <li><strong>Private rental</strong> — find your own apartment; we can assist with advice</li>
+          </ul>
+          <p>Contact your campus accommodation coordinator before arrival to arrange housing.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="rent cost accommodation per week price housing">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How much does accommodation cost per week?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Approximate weekly accommodation costs (2025) by campus:</p>
+          <ul>
+            <li><strong>Noosa</strong> — $280–$360/week (share house)</li>
+            <li><strong>Sunshine Coast</strong> — $240–$310/week (share house)</li>
+            <li><strong>Brisbane</strong> — $270–$340/week (share house/residence)</li>
+            <li><strong>Byron Bay</strong> — $300–$420/week (share house)</li>
+            <li><strong>Sydney (Manly)</strong> — $350–$450/week (Manly Bunkhouse / share)</li>
+            <li><strong>Perth City</strong> — $280–$380/week (share house)</li>
+          </ul>
+          <div class="info-box">These are estimates. Prices vary by room type, season, and availability. Contact your campus for current rates.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="homestay family rules meals what like experience">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What is homestay like?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Homestay means living with an approved Australian host family. It is an excellent option for students who want to practise English at home and experience Australian family life.</p>
+          <p>Typically included:</p>
+          <ul>
+            <li>Private bedroom</li>
+            <li>Breakfast and dinner (varies by arrangement)</li>
+            <li>Access to shared bathroom, laundry, and kitchen</li>
+            <li>Wi-Fi</li>
+          </ul>
+          <p>All Lexis homestay families are vetted and approved. There is a <strong>Homestay Code of Conduct</strong> for both students and host families to ensure a positive experience.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="property inspection checklist moving out bond condition">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What is a property inspection and why does it matter?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>When you move into rental accommodation, you should complete a <strong>Property Condition Report (inspection checklist)</strong> within the first 3 days. This documents:</p>
+          <ul>
+            <li>Any existing damage to walls, floors, fixtures, appliances</li>
+            <li>Condition of furniture and fittings</li>
+          </ul>
+          <p>This protects you from being held responsible for pre-existing damage when you leave. Keep a copy and send one to the agent or landlord.</p>
+          <div class="info-box">Lexis English provides a Property Inspection Checklist template in Appendix A of your Pre-Arrival Handbook.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="bond deposit rental return money lease">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What is a rental bond?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>A <strong>bond</strong> is a security deposit paid at the start of a tenancy — typically <strong>4 weeks' rent</strong>. In Australia, bonds are lodged with a government authority (not kept by the landlord):</p>
+          <ul>
+            <li><strong>QLD:</strong> Residential Tenancies Authority (RTA)</li>
+            <li><strong>NSW:</strong> NSW Fair Trading</li>
+            <li><strong>WA:</strong> Bond Administrator (Department of Commerce)</li>
+          </ul>
+          <p>Your bond is returned at the end of your tenancy if the property is left in the same condition as when you moved in (allowing for fair wear and tear).</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ WORKING ══ -->
+  <section class="faq-section" id="working">
+    <div class="section-header">
+      <div class="section-icon">💼</div>
+      <h2>Working in Australia</h2>
+      <span class="section-count">5 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="work hours student visa 40 hours fortnight legal allowed">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Can I work while studying in Australia?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes — student visa holders are permitted to work up to <strong>48 hours per fortnight</strong> (approximately 24 hours per week on average) while their course is in session.</p>
+          <p>There is <strong>no limit on working hours during school holidays</strong> or official vacation periods.</p>
+          <div class="info-box orange">Working more than the permitted hours is a <strong>visa breach</strong> and can result in cancellation of your student visa. Do not exceed your work entitlements.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="tfn tax file number how apply ato">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How do I get a Tax File Number (TFN)?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>A <strong>Tax File Number (TFN)</strong> is a unique number issued by the Australian Taxation Office (ATO). You need one to work legally and to pay the correct amount of tax.</p>
+          <p>To apply:</p>
+          <ul>
+            <li>Visit <a href="https://www.ato.gov.au" target="_blank">www.ato.gov.au</a> and complete the online TFN application</li>
+            <li>You must be in Australia and have an Australian address</li>
+            <li>Your TFN will arrive by post within 28 days</li>
+          </ul>
+          <p>Give your TFN to your employer when you start work. Without it, you will be taxed at the highest rate (47%).</p>
+          <p>ATO Helpline: <strong>13 28 61</strong></p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="superannuation super rate 11.5% retirement savings employer">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What is superannuation?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>Superannuation (super)</strong> is Australia's compulsory retirement savings system. Your employer must pay an additional <strong>11.5% of your ordinary earnings</strong> into a super fund on your behalf (as of FY2024–25).</p>
+          <p>You choose a super fund — many banks and financial institutions offer them. When you permanently leave Australia, you may be able to claim your super back through the <strong>Departing Australia Superannuation Payment (DASP)</strong> scheme.</p>
+          <p>To claim DASP after leaving: visit <a href="https://www.ato.gov.au" target="_blank">www.ato.gov.au/dasp</a></p>
+          <div class="info-box">Make sure your employer is actually paying your super — check your super fund statements regularly.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="tax return lodge income refund financial year">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Do I need to lodge a tax return?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>If you worked in Australia during a financial year (1 July – 30 June), you should lodge a tax return by <strong>31 October</strong> each year. You may be entitled to a <strong>refund</strong> if too much tax was withheld from your wages.</p>
+          <p>You can lodge online at <a href="https://www.ato.gov.au" target="_blank">myTax via ato.gov.au</a> or use a registered tax agent. Many tax agents offer free or low-cost returns for students.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="fair work rights underpaid employment rights minimum wage">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What are my rights as a worker in Australia?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>All workers in Australia — including international students — are protected by the <strong>Fair Work Act</strong>. Your rights include:</p>
+          <ul>
+            <li>National minimum wage (currently $24.10/hr as of July 2024)</li>
+            <li>Penalty rates for weekends, public holidays, and overtime</li>
+            <li>Safe working conditions</li>
+            <li>Protection from unfair dismissal</li>
+            <li>Right to join a union</li>
+          </ul>
+          <p>If you believe you are being underpaid or treated unfairly, contact the <strong>Fair Work Ombudsman</strong>: <strong>13 13 94</strong> or <a href="https://www.fairwork.gov.au" target="_blank">www.fairwork.gov.au</a></p>
+          <div class="info-box orange">You have rights regardless of your visa status. Do not be afraid to report exploitative employers.</div>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ MONEY ══ -->
+  <section class="faq-section" id="money">
+    <div class="section-header">
+      <div class="section-icon">💰</div>
+      <h2>Money &amp; Cost of Living</h2>
+      <span class="section-count">4 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="cost living weekly budget food transport groceries expenses">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How much money do I need per week?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Estimated weekly costs (excluding accommodation) — 2025 figures:</p>
+          <ul>
+            <li><strong>Groceries/food:</strong> $100–$150/week (cooking at home)</li>
+            <li><strong>Eating out:</strong> $15–$25 per meal at a café/restaurant</li>
+            <li><strong>Public transport:</strong> $30–$60/week depending on city</li>
+            <li><strong>Phone/internet:</strong> $15–$30/month</li>
+            <li><strong>Entertainment/activities:</strong> $50–$100/week</li>
+            <li><strong>Total (excl. rent):</strong> approximately <strong>$300–$500/week</strong></li>
+          </ul>
+          <p>Combined with rent, budget at least <strong>$700–$900/week</strong> in major cities (Sydney, Brisbane), or <strong>$600–$750</strong> in regional campuses (Noosa, Sunshine Coast).</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="atm cash withdrawal fee bank overseas international">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Are there ATM fees in Australia?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Most major Australian banks have removed ATM fees for their own customers. However:</p>
+          <ul>
+            <li>Using <strong>another bank's ATM</strong> may incur a fee (typically $2–$3)</li>
+            <li>Using an <strong>overseas bank card</strong> will incur international transaction fees (typically 2–3%)</li>
+            <li><strong>Eftpos</strong> (direct card payment) is free at most shops and supermarkets</li>
+          </ul>
+          <p>Opening an Australian bank account quickly will save you significant fees over a long stay.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="sending money home transfer remittance family international">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How do I send money back home?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>You can send money internationally using:</p>
+          <ul>
+            <li><strong>Wise (formerly TransferWise)</strong> — low fees, good exchange rates</li>
+            <li><strong>Western Union / MoneyGram</strong> — available at post offices and newsagencies</li>
+            <li><strong>Your Australian bank</strong> — international transfer, may have higher fees</li>
+            <li><strong>PayPal</strong> — convenient but check exchange rates</li>
+          </ul>
+          <p>Always compare exchange rates and fees before transferring. Wise typically offers the best rates for student amounts.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="consumer rights refund shop return faulty goods australia">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What are my consumer rights in Australia?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Australian consumer law gives you strong rights when buying goods and services:</p>
+          <ul>
+            <li><strong>Refund or replacement</strong> for faulty goods — even without a receipt if you can prove purchase</li>
+            <li>Goods must be <strong>fit for purpose</strong> and match descriptions</li>
+            <li>Services must be provided with <strong>reasonable care and skill</strong></li>
+          </ul>
+          <p>For disputes, contact the <strong>Australian Competition and Consumer Commission (ACCC)</strong>: <a href="https://www.accc.gov.au" target="_blank">www.accc.gov.au</a></p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ HEALTH & SAFETY ══ -->
+  <section class="faq-section" id="health">
+    <div class="section-header">
+      <div class="section-icon">🏥</div>
+      <h2>Health &amp; Safety</h2>
+      <span class="section-count">5 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="sick doctor gp clinic hospital ill campus absence">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What should I do if I get sick?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>If you are too sick to attend class:</p>
+          <ul>
+            <li><strong>Call your campus immediately</strong> before classes begin to report your absence</li>
+            <li>Visit a <strong>GP (General Practitioner)</strong> for a medical certificate if you are absent more than 1 day</li>
+            <li>Submit the medical certificate to student services — medical absences may be excluded from your attendance record</li>
+          </ul>
+          <p>Your OSHC card covers visits to bulk-billing GPs. Ask at reception if the doctor bulk bills — this means no out-of-pocket cost for you.</p>
+          <div class="info-box orange">Do not come to school if you have COVID-19 symptoms. Contact the campus by phone.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="mental health support counselling stress anxiety wellbeing">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Is there mental health support available?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes — Lexis English has a Student Support Officer at each campus who can provide pastoral care and refer you to professional support services if needed.</p>
+          <p>National mental health resources:</p>
+          <ul>
+            <li><strong>Lifeline</strong> — 13 11 14 (24/7 crisis support)</li>
+            <li><strong>Beyond Blue</strong> — 1300 22 4636 | <a href="https://www.beyondblue.org.au" target="_blank">beyondblue.org.au</a></li>
+            <li><strong>Kids Helpline</strong> (under 25) — 1800 55 1800</li>
+          </ul>
+          <p>Speak to your Student Services coordinator — everything you share is treated with confidentiality.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="beach safety swim flags rip current drowning ocean">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How do I stay safe at the beach?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Australian beaches can have dangerous rip currents. Always follow these rules:</p>
+          <ul>
+            <li><strong>Always swim between the red and yellow flags</strong> — this is the patrolled area</li>
+            <li>Never swim alone</li>
+            <li>If caught in a rip: <strong>don't fight it</strong> — float, raise your arm, and wait for rescue OR swim parallel to shore to escape</li>
+            <li>Check conditions before entering — look for signs and ask lifeguards</li>
+            <li>Never swim at unpatrolled beaches, at night, or when flags are not flying</li>
+          </ul>
+          <div class="info-box orange">Many international students drown in Australia each year. Rip currents can affect even strong swimmers. When in doubt, stay out.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="sun sunscreen uv protection skin cancer summer">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">How do I protect myself from the Australian sun?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Australia has one of the highest UV radiation levels in the world. Protect yourself with the "Slip, Slop, Slap, Seek, Slide" method:</p>
+          <ul>
+            <li><strong>Slip</strong> on sun-protective clothing</li>
+            <li><strong>Slop</strong> on SPF 50+ sunscreen (reapply every 2 hours)</li>
+            <li><strong>Slap</strong> on a hat (broad brim)</li>
+            <li><strong>Seek</strong> shade between 10am and 3pm</li>
+            <li><strong>Slide</strong> on sunglasses (UV400)</li>
+          </ul>
+          <p>You can get sunburnt even on cloudy days. Don't underestimate Australian UV.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="safety night dark walk alone assault theft crime">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Is it safe to walk alone at night?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Australia is generally safe, but follow common-sense precautions at night:</p>
+          <ul>
+            <li>Travel with a friend where possible</li>
+            <li>Stay in well-lit, populated areas</li>
+            <li>Avoid displaying expensive items (phone, jewellery, laptop)</li>
+            <li>Let someone know where you are going and when you expect to return</li>
+            <li>Use registered taxis or Uber rather than accepting rides from strangers</li>
+            <li>Trust your instincts — if something feels wrong, seek help immediately</li>
+          </ul>
+          <div class="info-box">If you feel unsafe, call <strong>000</strong> immediately. You can also call the Lexis English 24-hour emergency number for your campus.</div>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ VISA & LEGAL ══ -->
+  <section class="faq-section" id="visa">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>Visa &amp; Legal</h2>
+      <span class="section-count">4 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="visa conditions student subclass 500 rules requirements">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What are my student visa conditions?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>As a student visa (Subclass 500) holder, you must:</p>
+          <ul>
+            <li><strong>Maintain enrolment</strong> at a registered CRICOS provider</li>
+            <li><strong>Attend classes</strong> — minimum 80% attendance</li>
+            <li><strong>Maintain satisfactory course progress</strong></li>
+            <li>Work no more than <strong>48 hours per fortnight</strong> during study periods</li>
+            <li>Maintain <strong>OSHC</strong> for the duration of your visa</li>
+            <li>Notify your education provider of <strong>address changes within 7 days</strong></li>
+          </ul>
+          <p>Breaching these conditions can result in your visa being cancelled. Contact the Department of Home Affairs (DHA) if you have visa questions: <strong>13 1881</strong></p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="extend visa longer stay course enrollment extension">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Can I extend my course and stay longer?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes — you can extend your enrolment at Lexis English. Speak to your Student Services coordinator about extending your course. They will issue a new Confirmation of Enrolment (CoE).</p>
+          <p>To extend your <strong>student visa</strong>, you must apply online through the Department of Home Affairs <strong>before your current visa expires</strong>: <a href="https://immi.homeaffairs.gov.au" target="_blank">immi.homeaffairs.gov.au</a></p>
+          <div class="info-box orange">Apply for your visa extension well in advance — processing can take several weeks. Do not overstay your visa.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="refund cancel course withdraw deferral policy money back">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Can I get a refund if I cancel my course?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Lexis English's refund policy depends on when you cancel and the reason:</p>
+          <ul>
+            <li><strong>Visa refused before course starts:</strong> full refund minus an administration fee</li>
+            <li><strong>Cancellation before course starts (non-visa):</strong> partial refund — enrolment fee and notice period deducted</li>
+            <li><strong>Cancellation after course begins:</strong> refund for unused complete weeks, minus applicable fees</li>
+            <li><strong>Lexis cancels the course:</strong> full refund of unused fees</li>
+          </ul>
+          <p>All refund requests must be made in writing to your campus. Contact Student Services for the current full policy document and any special circumstances.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="legal aid help rights lawyer free advice police">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Where can I get free legal help?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Free legal aid is available in each state:</p>
+          <ul>
+            <li><strong>Queensland:</strong> Legal Aid QLD — <a href="https://www.legalaid.qld.gov.au" target="_blank">legalaid.qld.gov.au</a> | 1300 65 11 88</li>
+            <li><strong>New South Wales:</strong> Legal Aid NSW — <a href="https://www.legalaid.nsw.gov.au" target="_blank">legalaid.nsw.gov.au</a> | 1300 888 529</li>
+            <li><strong>Western Australia:</strong> Legal Aid WA — <a href="https://www.legalaid.wa.gov.au" target="_blank">legalaid.wa.gov.au</a> | 1300 650 579</li>
+          </ul>
+          <p>Legal aid can help with tenancy disputes, employment issues, discrimination, police matters, and other legal problems.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ OUR CAMPUSES ══ -->
+  <section class="faq-section" id="campuses">
+    <div class="section-header">
+      <div class="section-icon">📍</div>
+      <h2>Our Campuses</h2>
+      <span class="section-count">2 questions</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="campus locations address phone contact all schools">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">Where are the Lexis English campuses located?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <table class="campus-table">
+            <tr><th>Campus</th><th>Address</th><th>Phone</th></tr>
+            <tr><td><strong>Noosa</strong></td><td>6 Lanyana Way, Noosa Heads QLD 4567</td><td>+61 7 5474 3000</td></tr>
+            <tr><td><strong>Sunshine Coast</strong></td><td>Level 6, 26 Duporth Ave, Maroochydore QLD 4558</td><td>+61 7 5479 2272</td></tr>
+            <tr><td><strong>Brisbane</strong></td><td>Level 11/12, 288 Edward Street, Brisbane City QLD 4000</td><td>+61 7 3002 8588</td></tr>
+            <tr><td><strong>Byron Bay</strong></td><td>16-20 Ruskin Street, Byron Bay NSW 2481</td><td>+61 2 6680 9903</td></tr>
+            <tr><td><strong>Sydney (Manly)</strong></td><td>30-32 South Steyne, Manly NSW 2095</td><td>+61 2 9976 2422</td></tr>
+            <tr><td><strong>Perth City</strong></td><td>Ground Level, 197 St Georges Tce, Perth WA 6000</td><td>—</td></tr>
+          </table>
+        </div></div>
+      </div>
+
+      <div class="faq-item" data-keywords="cricos registration number code registered australia government">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What are the Lexis English CRICOS registration codes?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>All Lexis English campuses are registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS):</p>
+          <ul>
+            <li><strong>Noosa &amp; Sunshine Coast:</strong> CRICOS Provider Code 01632D</li>
+            <li><strong>Brisbane:</strong> CRICOS Provider Code 02499G</li>
+            <li><strong>Byron Bay:</strong> CRICOS Provider Code 030109J</li>
+            <li><strong>Sydney (Manly):</strong> CRICOS Provider Code 02362B</li>
+            <li><strong>Perth City:</strong> CRICOS Provider Code 03972F</li>
+          </ul>
+          <p>You can verify registration at <a href="https://www.cricos.education.gov.au" target="_blank">cricos.education.gov.au</a></p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ EMERGENCIES ══ -->
+  <section class="faq-section" id="emergencies">
+    <div class="section-header">
+      <div class="section-icon">🚨</div>
+      <h2>Emergency Numbers</h2>
+      <span class="section-count">1 question</span>
+    </div>
+    <div class="accordion">
+
+      <div class="faq-item" data-keywords="emergency number contact 000 police fire ambulance call">
+        <div class="faq-question" onclick="toggle(this)">
+          <span class="faq-q-text">What are the key emergency numbers I need to know?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <span class="tag">SAVE THESE TO YOUR PHONE</span>
+          <div class="emergency-grid">
+            <div class="emergency-card">
+              <div class="e-label">Emergency Services</div>
+              <div class="e-num">000</div>
+              <div class="e-desc">Police, Fire, Ambulance</div>
+            </div>
+            <div class="emergency-card">
+              <div class="e-label">Dept. Home Affairs</div>
+              <div class="e-num">13 1881</div>
+              <div class="e-desc">Visa &amp; immigration</div>
+            </div>
+            <div class="emergency-card">
+              <div class="e-label">ATO</div>
+              <div class="e-num">13 2861</div>
+              <div class="e-desc">Tax &amp; TFN enquiries</div>
+            </div>
+            <div class="emergency-card">
+              <div class="e-label">Allianz OSHC</div>
+              <div class="e-num">1300 136 742</div>
+              <div class="e-desc">Health insurance claims</div>
+            </div>
+            <div class="emergency-card">
+              <div class="e-label">Fair Work</div>
+              <div class="e-num">13 13 94</div>
+              <div class="e-desc">Employment rights</div>
+            </div>
+            <div class="emergency-card">
+              <div class="e-label">Lifeline</div>
+              <div class="e-num">13 11 14</div>
+              <div class="e-desc">Mental health crisis (24/7)</div>
+            </div>
+          </div>
+          <p style="margin-top:14px;">Each Lexis English campus also has a <strong>24-hour student emergency number</strong>. This number is provided to you on enrolment and is listed in your Pre-Arrival Handbook.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT BANNER ── -->
+  <div class="contact-banner">
+    <div>
+      <h3>Still have a question?</h3>
+      <p>Our student services team is here to help — before you arrive and throughout your stay.</p>
+    </div>
+    <a href="mailto:info@lexisenglish.com" class="contact-btn">Contact Us</a>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p><strong>Lexis English</strong> &nbsp;|&nbsp; Noosa · Sunshine Coast · Brisbane · Byron Bay · Sydney · Perth City</p>
+  <p style="margin-top:6px;">
+    <a href="https://www.lexisenglish.com">www.lexisenglish.com</a> &nbsp;|&nbsp;
+    <a href="mailto:info@lexisenglish.com">info@lexisenglish.com</a>
+  </p>
+  <p style="margin-top:10px;font-size:0.75rem;color:rgba(255,255,255,0.4);">
+    All information is general in nature and subject to change. For campus-specific details refer to your Pre-Arrival Handbook or contact your campus directly.
+  </p>
+</footer>
+
+<script>
+  // ── Accordion toggle
+  function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    // Open clicked (unless it was already open)
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ── Scroll to section + highlight tab
+  function scrollToSection(btn, id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // ── Search filter
+  function filterFAQs() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const text = (item.querySelector('.faq-q-text').textContent + ' ' +
+                    item.querySelector('.faq-answer-inner').textContent + ' ' +
+                    (item.dataset.keywords || '')).toLowerCase();
+      const match = !query || text.includes(query);
+      item.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+
+    // Hide/show empty sections
+    document.querySelectorAll('.faq-section').forEach(sec => {
+      const visible = [...sec.querySelectorAll('.faq-item')].some(i => i.style.display !== 'none');
+      sec.style.display = visible ? '' : 'none';
+    });
+
+    document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  // Live search on keyup
+  document.getElementById('searchInput').addEventListener('keyup', function(e) {
+    if (e.key === 'Enter' || this.value === '') filterFAQs();
+  });
+  document.getElementById('searchInput').addEventListener('input', function() {
+    if (this.value === '') filterFAQs();
+  });
+
+  // Highlight active tab on scroll
+  const sections = document.querySelectorAll('.faq-section');
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sectionIds = ['before-arrival','first-day','academic','accommodation','working','money','health','visa','campuses','emergencies'];
+
+  window.addEventListener('scroll', () => {
+    let current = sectionIds[0];
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle('active', sectionIds[i] === current);
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
